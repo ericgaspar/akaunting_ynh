@@ -61,6 +61,7 @@ ram.runtime = "50M"
     [resources.sources.main]
     url = "https://github.com/akaunting/akaunting/releases/download/3.1.11/Akaunting_3.1.11-Stable.zip"
     sha256 = "7994d4c4d59f7ac1fdd90497133786795a4f2cd78104f5dd08c34e7b3fc85e67"
+    in_subdir = false
 
     # autoupdate.strategy = "latest_github_tag"
 
@@ -72,8 +73,6 @@ ram.runtime = "50M"
 
     [resources.permissions]
     main.url = "/"
-
-    [resources.ports]
 
     [resources.apt]
     packages = "mariadb-server, php8.3-fpm, php8.3-pdo, php8.3-dom, php8.3-mbstring, php8.3-mysql, php8.3-zip, php8.3-fileinfo, php8.3-intl, php8.3-tokenizer"
