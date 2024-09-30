@@ -24,10 +24,10 @@ chown -R "$app:www-data" "$install_dir"
 #=================================================
 ynh_script_progression "Adding $app's configuration files..."
 
-ynh_config_add --template="some_config_file" --destination="$install_dir/some_config_file"
+ynh_config_add --template=".env" --destination="$install_dir/.env"
 
-chmod 400 "$install_dir/some_config_file"
-chown "$app:$app" "$install_dir/some_config_file"
+chmod 400 "$install_dir/.env"
+chown "$app:$app" "$install_dir/.env"
 
 #=================================================
 # SYSTEM CONFIGURATION
@@ -58,7 +58,6 @@ pushd "$install_dir/sources"
     ynh_exec_as_app php$php_version artisan install --db-name="$db_name" --db-username="$db_user" --db-password="$db_pwd" --admin-email="$email" --admin-password="$password"
 
 popd
-
 
 #=================================================
 # START SYSTEMD SERVICE
