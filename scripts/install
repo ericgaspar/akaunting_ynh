@@ -5,7 +5,7 @@ source /usr/share/yunohost/helpers
 
 
 email=$(ynh_user_get_info --username=$admin --key=mail)
-key=$(generate_secret_key)
+key=$(ynh_string_random --length=32)
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
